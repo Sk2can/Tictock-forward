@@ -15,7 +15,7 @@ if load_dotenv('token.env'):
     BOT_TOKEN = os.getenv('BOT_TOKEN')
     GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
 else:
-    BOT_TOKEN = os.getenv("TOKEN")
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
     GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
 
 bot = Bot(token=BOT_TOKEN)
