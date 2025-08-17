@@ -10,10 +10,13 @@ import re
 import os
 
 
-# Создайте в корневом каталоге файл token.env c переменной BOT_TOKEN и GROUP_CHAT_ID
-load_dotenv('token.env')
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
+if load_dotenv('token.env'):
+    # Замените 'YOUR_BOT_TOKEN' на токен вашего бота
+    BOT_TOKEN = os.getenv('BOT_TOKEN')
+    GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
+else:
+    BOT_TOKEN = os.getenv("TOKEN")
+    GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
